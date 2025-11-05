@@ -1,11 +1,8 @@
 module.exports = function (router) {
-
-    var homeRoute = router.route('/');
-
-    homeRoute.get(function (req, res) {
-        var connectionString = process.env.TOKEN;
-        res.json({ message: 'My connection string is ' + connectionString });
-    });
-
+    router.route('/')
+      .get(function (_, res) {
+        res.status(200).json({ message: 'OK', data: 'API root' });
+      });
     return router;
-}
+  };
+  
